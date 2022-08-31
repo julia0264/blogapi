@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="blog">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Angular Js -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Blog julia</title>
+        <link rel="icon" type="image/x-icon" href="assets/icone.ico" />
+</head>
+
+<body>
+    <h1 class="fs-2 text-pink text-center p-5 fw-light">Mais conteúdos</h1>
+
+    <div class="container">
+      <div class="row text-center" ng-controller="Rest">
+        <div class="col-12 col-sm-4" ng-repeat="publicacao in publicacoes">
+          <div class="teste mt-3 mb-3 bg-publicacao rounded">
+              <img class="img-fluid" ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}">
+              <h1 class="title-noticia p-3 fs-5">{{ publicacao.title }}</h1>
+              <p class="text-black text-center fs-6 p-1">{{ publicacao.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/scripts.js"></script>
